@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        tr {
+            height: 50px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #eee;
+        }
+    </style>
+    <script src="JSONP.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>日期</th>
+            <th>温度</th>
+            <th>天气</th>
+            <th>风向</th>
+            <th>风力</th>
+        </tr>
+
+    </table>
+
+    <script>
+        const table = document.querySelector('table');
+
+        function dateFormat(date) {
+            let year = date.substr(0, 4);
+            let month = date.substr(4, 2);
+            let day = date.substr(6, 2);
+            let hour = date.substr(8, 2);
+
+            return `${year}年${month}月${day}日${hour}时`;
+        }
+
+        jsonp({
+            url: 'https://wis.qq.com/weather/common',
+            data: {
+                source: 'pc',
+                weather_type: 'forecast_1h',
+                province: '广东省',
+                city: '广州市'
+            },
+            success(data) {
+                let weather = data.data.forecast_1h;
+                const keys = ['update_time', 'degree', 'weather', 'wind_direction', 'wind_power'];
+                let fragment = document.createDocumentFragment();
+
+                weather = Object.values(weather);
+
+                weather.forEach(obj => {
+                    let tr = document.createElement('tr');
+
+                    keys.forEach(key => {
+                        let td = document.createElement('td');
+
+                        if (key === 'update_time') {
+                            td.textContent = dateFormat(obj[key]);
+                        } else {
+                            td.textContent = obj[key];
+                        }
+
+                        tr.appendChild(td);
+                    });
+
+                    fragment.appendChild(tr);
+                });
+
+                table.appendChild(fragment);
+            }
+        });
+    </script>
+</body>
+
+</html>
