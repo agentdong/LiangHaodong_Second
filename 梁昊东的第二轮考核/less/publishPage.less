@@ -1,0 +1,210 @@
+// 发布文章页面
+.publish {
+    position: relative;
+    display: none;
+    padding: 20px 20px 0;
+    height: 100%;
+
+    // 返回按钮
+    .publish-back::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-top: 2px solid #666;
+        border-left: 2px solid #666;
+        transform: rotate(-45deg);
+    }
+
+    // 预览图片的样式
+    .pre-img {
+        width: 100px;
+        border-radius: 5px;
+    }
+
+    // 点击上传图片的区域
+    .publish-pic {
+        position: relative;
+        overflow: hidden;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+
+    // 删除图片按钮
+    .img-remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-bottom-left-radius: 50%;
+        background: rgba(0, 0, 0, .4);
+        color: #fff;
+    }
+
+    // 写文章区域
+    .write {
+        .upload-img {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        // 上传图片的区域
+        .publish-img-area {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+
+            // 关闭图标
+            .icon-guanbi {
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+
+        // 修改字体图标样式
+        .iconfont {
+            font-size: 25px;
+        }
+
+        // 文章标题
+        .page-title {
+            margin-top: 30px;
+            width: 100%;
+            height: 60px;
+            border-bottom: 1px solid #eee;
+            font-size: 20px;
+        }
+
+        .page-title::placeholder,
+        .page-content::placeholder {
+            color: #ccc;
+        }
+
+        // 文章正文
+        .page-content {
+            margin-top: 20px;
+            width: 100%;
+            height: 220px;
+            font-size: 20px;
+            resize: none;
+        }
+
+        // 话题
+        .addition {
+            border-bottom: 1px solid #eee;
+
+            // 添加话题和@按钮
+            button {
+                margin-bottom: 10px;
+                width: 50px;
+                height: 25px;
+                background-color: transparent;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                color: #666;
+            }
+
+            // 添加话题按钮
+            .theme {
+                margin-right: 10px;
+            }
+
+            // 展示话题的区域
+            .theme-area {
+                color: rgb(255, 68, 68);
+            }
+        }
+
+        // 发布按钮
+        .publish-btn {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 40px;
+            width: 350px;
+            border-radius: 20px;
+            background-color: rgb(255, 68, 68);
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+
+    // 写入话题的区域
+    .write-theme-box {
+        display: none;
+
+        // 遮罩层
+        .publish-mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        // 输入框
+        .input-theme-area {
+            overflow: hidden;
+            position: absolute;
+            left: 50%;
+            top: 50vh;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 8px;
+
+            // 输入表单
+            input {
+                padding-left: 10px;
+                width: 100%;
+                height: 60px;
+                border-bottom: 1px solid #eee;
+                font-size: 18px;
+            }
+
+            // 按钮部分
+            .theme-btn {
+                display: flex;
+                height: 40px;
+
+                button {
+                    flex: 1;
+                    font-size: 18px;
+                    color: rgb(255, 68, 68);
+                }
+
+                // 删除按钮
+                #cancel {
+                    border-right: 1px solid #eee;
+                }
+            }
+        }
+    }
+
+    // 发布后的提示信息
+    .publish-info {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+        width: 130px;
+        height: 60px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, .5);
+        color: #fff;
+        text-align: center;
+        line-height: 60px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+}

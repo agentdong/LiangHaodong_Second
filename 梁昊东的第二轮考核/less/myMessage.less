@@ -1,0 +1,64 @@
+// 我的信息页面
+.myMessage {
+    display: none;
+}
+
+// 置顶栏
+.myMessage-shortcut {
+    position: relative;
+    padding-top: 15px;
+    text-align: center;
+
+    // 标题
+    h4 {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    // 创建聊天按钮
+    button {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        font-size: 16px;
+    }
+}
+
+// 功能区
+.myMessage-function {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // 图标
+    span {
+        font-size: 28px;
+    }
+
+    // 文字
+    i {
+        margin-top: -5px;
+        font-size: 16px;
+        color: #bbb;
+    }
+
+    // 指定不同颜色
+    .msg-like-icon {
+        color: rgb(252, 80, 80);
+    }
+
+    .msg-follow-icon {
+        color: rgb(104, 104, 252);
+    }
+
+    .msg-review-icon {
+        color: rgb(74, 124, 74);
+    }
+}

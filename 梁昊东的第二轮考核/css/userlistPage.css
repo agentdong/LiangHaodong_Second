@@ -1,0 +1,30 @@
+.userlist-Page {
+  display: none;
+}
+.userlist-shortcut {
+  position: relative;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.userlist-shortcut .userlist-back {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.userlist-shortcut h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+}
+.userlist-tab {
+  display: flex;
+  justify-content: space-around;
+}
+.userlist-tab li {
+  padding-top: 20px;
+  font-size: 20px;
+}
+.getLike,
+.getStared {
+  display: none;
+}

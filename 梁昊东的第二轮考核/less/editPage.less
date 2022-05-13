@@ -1,0 +1,168 @@
+// 编辑页面
+.user-edit {
+    display: none;
+}
+
+// 返回按钮
+.edit-back {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+// 头像部分
+.edit-user-avatar {
+    margin-top: 30px;
+    text-align: center;
+
+    // 头像图片
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    // 上传文件表单
+    .avatar-pic {
+        display: none;
+    }
+}
+
+// 编辑栏
+.edit-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+
+    // 提示信息
+    .hint {
+        font-size: 20px;
+        color: #aaa;
+    }
+
+    // 内容
+    .content {
+        margin-right: 20px;
+        font-size: 18px;
+    }
+}
+
+// 三角图标
+.edit-bar::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    right: 18px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+
+// 上传背景图部分
+.user-backGroundPicture {
+
+    // 提示信息
+    .hint {
+        line-height: 50px;
+    }
+
+    // 三角图标
+    &::after {
+        top: 34px;
+    }
+
+    // 背景图
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+    }
+}
+
+// 遮罩层
+.edit-mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .4);
+}
+
+// 编辑信息输入框
+.edit-box {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 1;
+    text-align: center;
+
+    // 按钮区域
+    .edit-box-btn {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    // 按钮
+    button {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 68, 68);
+    }
+
+    button:nth-child(1) {
+        border-right: 1px solid #ccc;
+    }
+}
+
+// 输入框
+.edit-input {
+    padding: 0 15px;
+    width: 250px;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+}
+
+// 错误提示框
+.edit-error {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 40px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    color: red;
+}
+
+// 背景图预览盒子
+.backGroundPicture-content {
+    img {
+        display: none;
+    }
+}
+
+// 上传文件表单
+.upload-background-img {
+    display: none;
+}

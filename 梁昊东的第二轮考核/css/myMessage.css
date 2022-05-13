@@ -1,0 +1,46 @@
+.myMessage {
+  display: none;
+}
+.myMessage-shortcut {
+  position: relative;
+  padding-top: 15px;
+  text-align: center;
+}
+.myMessage-shortcut h4 {
+  font-size: 22px;
+  font-weight: 400;
+}
+.myMessage-shortcut button {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 16px;
+}
+.myMessage-function {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.myMessage-function div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.myMessage-function span {
+  font-size: 28px;
+}
+.myMessage-function i {
+  margin-top: -5px;
+  font-size: 16px;
+  color: #bbb;
+}
+.myMessage-function .msg-like-icon {
+  color: #fc5050;
+}
+.myMessage-function .msg-follow-icon {
+  color: #6868fc;
+}
+.myMessage-function .msg-review-icon {
+  color: #4a7c4a;
+}

@@ -1,0 +1,105 @@
+// 个人中心
+.personal {
+    display: none;
+    height: 100vh;
+    background-position: top center;
+}
+
+// 置顶栏
+.personal-shortcut {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    // 退出登录按钮
+    .out-login {
+        font-size: 25px;
+        line-height: 50px;
+    }
+}
+
+.person-info {
+    display: flex;
+    padding: 0 15px;
+
+    // 头像
+    img {
+        margin-right: 15px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    // 昵称
+    h4 {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 100px;
+    }
+}
+
+// 功能区
+.person-function {
+    display: flex;
+    padding: 30px 0 0;
+
+    ul {
+        display: flex;
+
+        // 关注的人等点击区域
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 15px;
+            color: #ccc;
+
+            // 数量
+            i {
+                font-size: 20px;
+            }
+
+            // 文字
+            p {
+                font-size: 16px;
+            }
+        }
+
+        // 颜色
+        .red-color {
+            color: rgb(255, 68, 68);
+        }
+    }
+
+    // 编辑资料按钮
+    .person-data {
+        margin-top: 12px;
+        margin-left: 30px;
+        padding: 0 10px;
+        height: 30px;
+        border: 1px solid #888;
+        border-radius: 5px;
+    }
+}
+
+// 文章展示区
+.person-show {
+    margin-top: 20px;
+
+    // 切换按钮
+    .page-tab {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 15px;
+        font-size: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    // 装文章的盒子
+    .note-page,
+    .collect-page,
+    .like-page {
+        display: none;
+        position: relative;
+    }
+}

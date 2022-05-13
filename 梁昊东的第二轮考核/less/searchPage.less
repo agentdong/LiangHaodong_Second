@@ -1,0 +1,151 @@
+// 搜索页面
+.search {
+    display: none;
+}
+
+// 置顶栏
+.search-shortcut {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0;
+
+    // 返回按钮
+    .search-back {
+        padding-top: 12px;
+    }
+
+    // 搜索框
+    .searchBox {
+        position: relative;
+    }
+
+    // 搜索图标
+    .searchBox::before {
+        position: absolute;
+        left: 10px;
+        top: 8px;
+    }
+
+    // input表单
+    .search-input {
+        padding-left: 30px;
+        width: 250px;
+        height: 40px;
+        background-color: #eee;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        line-height: 40px;
+    }
+
+    .search-input:focus {
+        background-color: #fff;
+        border: 1px solid rgb(255, 68, 68);
+    }
+
+    // 搜索按钮
+    .search-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+        color: rgb(255, 68, 68);
+    }
+}
+
+// 切换搜索结果按钮
+.search-nav {
+    display: none;
+    padding: 20px 100px 0;
+    height: 65px;
+    border-bottom: 1px solid #eee;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+}
+
+// 搜索接过盒子
+.search-result-content {
+    display: none;
+    position: relative;
+    margin: 10px 2px 0 5px;
+}
+
+// 用户搜索结果
+#result-user {
+    padding: 5px 15px;
+
+    // 单条搜索结果样式
+    .user-item:nth-child(1) {
+        border-top: 1px solid #eee;
+    }
+
+    .user-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+
+        // 昵称
+        h4 {
+            font-size: 16px;
+        }
+
+        // 简介
+        p {
+            white-space: nowrap;
+            color: #bbb;
+        }
+
+        // 装文字的盒子
+        span {
+            margin-top: 5px;
+        }
+    }
+
+    // 头像
+    img {
+        float: left;
+        margin-right: 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: gray;
+    }
+
+    span {
+        float: right;
+    }
+
+    // 关注按钮
+    .follow {
+        margin-top: 5px;
+    }
+
+    // 到底提示盒子
+    .endUserInfo {
+        margin-top: 10px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+
+}
+
+// 错误提示盒子
+.follow-error {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    padding: 0 5px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 8px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}

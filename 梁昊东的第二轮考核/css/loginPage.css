@@ -1,0 +1,72 @@
+.login {
+  position: relative;
+  display: none;
+}
+.login .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+}
+.login .logo img {
+  width: 190px;
+  background-color: transparent;
+}
+.login .logo h5 {
+  position: absolute;
+  bottom: 5px;
+  width: 200px;
+  padding-left: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 17px;
+}
+.login .input {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 520px;
+  text-align: center;
+}
+.login .input .input_error {
+  box-shadow: 0 0 5px #ff8282;
+  border: 1px solid #ff7d7d;
+}
+.login .un {
+  margin-bottom: 20px;
+}
+.login .un,
+.login .pwd {
+  padding: 0 25px;
+  width: 312px;
+  height: 50px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  text-align: center;
+  caret-color: red;
+  border-radius: 25px;
+}
+.login .un::placeholder,
+.login .pwd::placeholder {
+  color: #ddd;
+}
+.login .un:focus,
+.login .pwd:focus {
+  border: 1px solid #464646;
+  box-shadow: 0 0 5px #373737;
+}
+.login .btn {
+  margin-top: 20px;
+  width: 125px;
+  height: 50px;
+  background-color: #ff3232;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+.login .input_info {
+  font-size: 16px;
+  color: red;
+}

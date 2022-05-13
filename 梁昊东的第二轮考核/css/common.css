@@ -1,0 +1,182 @@
+.show {
+    display: block!important;
+}
+
+.hide {
+    display: none!important;
+}
+
+.flex {
+    display: flex!important;
+}
+
+.tab-nav-selected {
+    position: relative;
+    color: rgb(225, 93, 93);
+}
+
+.tab-nav-selected::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(225, 93, 93);
+}
+
+.pa {
+    position: absolute;
+}
+
+.ilb {
+    display: inline-block;
+}
+
+
+.item {
+    overflow: hidden;
+    vertical-align: top;
+    margin: 5px 2px 0;
+    width: 48.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    border-radius: 8px;
+}
+
+.item img {
+    width: 100%;
+    background-color: gray;
+}
+
+h5 {
+    margin-top: 6px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.item-info {
+    display: flex;
+    padding: 8px 10px 5px;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 40px;
+
+}
+
+.item-info img {
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.endInfo {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    margin-bottom: 54px;
+    height: 90px;
+    font-size: 18px;
+}
+
+.goBack-btn::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #666;
+    border-left: 2px solid #666;
+    transform: rotate(-45deg);
+}
+
+.btn-fan {
+    background-color: rgb(255, 68, 68);
+    color: #fff !important;
+}
+
+.like-button {
+    border: 1px solid rgb(255, 68, 68)!important;
+    color: rgb(255, 68, 68)!important;
+}
+
+.btn-both-fan {
+    background-color: transparent;
+    border: 1px solid #bbb !important;
+    color: #bbb !important;
+}
+
+.follow {
+    width: 60px;
+    height: 30px;
+    border: 1px solid rgb(255, 68, 68);
+    border-radius: 8px;
+    color: rgb(255, 68, 68);
+}
+
+img {
+    background-color: gray;
+}
+
+.icon-xihuan::before {
+    color: rgb(255, 68, 68);
+}
+
+.icon-shoucang1::before {
+    color: rgb(251 251 80);
+    font-size: 29px!important;
+}
+
+.icon-fenxiang {
+    line-height: 50px;
+    font-size: 25px!important;
+}
+
+/* 获赞与收藏的列表样式 */
+.userAndPage {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.userAndPage:nth-child(1) {
+    border-top: 1px solid #eee;
+}
+
+.userAndPage-left,
+.userAndPage-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userAndPage-right img {
+    border-radius: 0!important;
+}
+
+.userAndPage-info h4{
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.userAndPage-info p {
+    color: #bbb;
+}
+
+.userAndPage-details {
+    position: relative;
+    padding-right: 15px;
+}
+
+.userAndPage-details::before {
+    position: absolute;
+    content: '';
+    top: 13px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    transform: rotate(45deg);
+}

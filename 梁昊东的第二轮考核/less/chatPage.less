@@ -1,0 +1,165 @@
+// 聊天界面
+.chat-page {
+    display: none;
+}
+
+// 置顶栏
+.chat-shortcut {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+
+    // 返回按钮
+    .chat-page-back {
+        position: absolute;
+        top: 12px;
+        left: 18px;
+    }
+
+    // 用户名称
+    .chat-user-name {
+        text-align: center;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 40px;
+    }
+}
+
+// 撑高页面，防止被底部输入框遮挡
+.msg-area::after {
+    content: '';
+    display: block;
+    height: 50px;
+}
+
+// 发消息区域
+.message-input {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 50px;
+    background-color: #eee;
+    text-align: center;
+
+    // input表单
+    .message-content {
+        padding-left: 15px;
+        margin-top: 5px;
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #fff;
+        font-size: 16px;
+
+        &::placeholder {
+            color: #bbb;
+        }
+    }
+
+    // 发送按钮
+    .send-message {
+        overflow: hidden;
+        width: 0;
+        margin-top: 5px;
+        height: 40px;
+        background-color: rgb(117, 197, 229);
+        border-radius: 20px;
+        color: #fff;
+        font-weight: 700;
+        white-space: nowrap;
+        transition: all .5s;
+    }
+
+    // 按钮变化
+    .send-message-change {
+        margin-left: 10px;
+        width: 60px;
+    }
+}
+
+// 聊天信息盒子
+.msg-Item {
+    width: 100%;
+}
+
+.msg-info {
+    display: flex;
+    margin: 15px;
+
+    // 头像
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    // 内容
+    .msg-content {
+        height: 40px;
+        margin-top: 5px;
+        padding: 0 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 16px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+        z-index: -1;
+    }
+}
+
+// 发信者是其他人时的样式
+.other {
+    .msg-content {
+        position: relative;
+        margin-left: 10px;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -16px;
+            content: '';
+            border: 8px solid transparent;
+            border-right-color: #fff;
+        }
+    }
+}
+
+// 发信者是自己时的样式
+.owner {
+    float: right;
+
+    .msg-content {
+        position: relative;
+        margin-right: 10px;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -16px;
+            content: '';
+            border: 8px solid transparent;
+            border-left-color: #fff;
+        }
+    }
+
+}
+
+// 底部提示信息盒子
+.chat-msg-end {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    margin-bottom: 54px;
+    height: 90px;
+    font-size: 18px;
+    text-align: center;
+}

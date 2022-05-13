@@ -1,0 +1,85 @@
+.user-home {
+  display: none;
+}
+.user-home .user-home-info {
+  display: flex;
+  padding: 0 15px;
+}
+.user-home .user-home-info img {
+  margin-right: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.user-home .user-home-info h4 {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 100px;
+}
+.user-shortcut {
+  display: flex;
+  padding: 0 15px;
+  height: 50px;
+}
+.user-shortcut .user-back {
+  margin-top: 16px;
+}
+.user-function {
+  display: flex;
+  padding: 30px 0 0;
+}
+.user-function ul {
+  display: flex;
+}
+.user-function ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+  color: #ccc;
+}
+.user-function ul li i {
+  font-size: 20px;
+}
+.user-function ul li p {
+  font-size: 16px;
+}
+.user-function ul .red-color {
+  color: #ff4444;
+}
+.user-function .user-chat {
+  margin-top: 12px;
+  margin-left: 30px;
+  padding: 0 10px;
+  height: 30px;
+  border: 1px solid #888;
+  border-radius: 5px;
+}
+.user-show {
+  margin-top: 20px;
+}
+.user-show .page-tab {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+}
+.user-show .note-page,
+.user-show .collect-page,
+.user-show .like-page {
+  display: none;
+  position: relative;
+}
+.noBothFan {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}

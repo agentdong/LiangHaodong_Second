@@ -1,0 +1,65 @@
+.subject {
+  display: none;
+}
+.home {
+  display: none;
+}
+.home header {
+  padding: 10px 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.home .shortcut {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+.home .shortcut h2 {
+  font-weight: 400;
+  font-size: 25px;
+}
+.home .shortcut a {
+  line-height: 37.5px;
+  font-size: 35px;
+  color: #666;
+}
+.home .shortcut .release {
+  color: #ff4444;
+}
+.home .tab-nav {
+  padding: 10px 0 15px;
+}
+.home .tab-nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+.home .tab-nav ul li {
+  font-size: 18px;
+}
+.home .main {
+  display: none;
+  position: relative;
+  margin: 10px 2px 0 5px;
+}
+.tab {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.tab ul {
+  display: flex;
+}
+.tab li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  color: #ccc;
+}
+.tab li .iconfont {
+  font-size: 20px;
+}
+.tab-selected {
+  color: #e15d5d !important;
+}

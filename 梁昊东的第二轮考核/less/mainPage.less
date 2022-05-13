@@ -1,0 +1,92 @@
+// 主页面
+.subject {
+    display: none;
+}
+
+// 主页部分的样式
+.home {
+    display: none;
+
+    // 头部区域的样式
+    header {
+        padding: 10px 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    // 置顶栏的样式
+    .shortcut {
+        display: flex;
+        justify-content: space-between;
+        color: #666;
+
+        // 首页标题的样式
+        h2 {
+            font-weight: 400;
+            font-size: 25px;
+        }
+
+        // 左右两个功能按钮的样式
+        a {
+            line-height: 37.5px;
+            font-size: 35px;
+            color: #666;
+        }
+
+        // 发布文章按钮的样式
+        .release {
+            color: rgb(255, 68, 68);
+        }
+    }
+
+    // tab栏的样式
+    .tab-nav {
+        padding: 10px 0 15px;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .main {
+        display: none;
+        position: relative;
+        margin: 10px 2px 0 5px;
+
+    }
+
+}
+
+
+//底部tab栏
+.tab {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        color: #ccc;
+
+        .iconfont {
+            font-size: 20px;
+        }
+    }
+}
+
+.tab-selected {
+    color: rgb(225, 93, 93) !important;
+}

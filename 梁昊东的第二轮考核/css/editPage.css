@@ -1,0 +1,122 @@
+.user-edit {
+  display: none;
+}
+.edit-back {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.edit-user-avatar {
+  margin-top: 30px;
+  text-align: center;
+}
+.edit-user-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.edit-user-avatar .avatar-pic {
+  display: none;
+}
+.edit-bar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+.edit-bar .hint {
+  font-size: 20px;
+  color: #aaa;
+}
+.edit-bar .content {
+  margin-right: 20px;
+  font-size: 18px;
+}
+.edit-bar::after {
+  content: '';
+  position: absolute;
+  top: 22px;
+  right: 18px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  transform: rotate(45deg);
+}
+.user-backGroundPicture .hint {
+  line-height: 50px;
+}
+.user-backGroundPicture::after {
+  top: 34px;
+}
+.user-backGroundPicture img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.edit-mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+.edit-box {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 1;
+  text-align: center;
+}
+.edit-box .edit-box-btn {
+  display: flex;
+  justify-content: space-around;
+}
+.edit-box button {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  color: #ff4444;
+}
+.edit-box button:nth-child(1) {
+  border-right: 1px solid #ccc;
+}
+.edit-input {
+  padding: 0 15px;
+  width: 250px;
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+.edit-error {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 40px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  color: red;
+}
+.backGroundPicture-content img {
+  display: none;
+}
+.upload-background-img {
+  display: none;
+}

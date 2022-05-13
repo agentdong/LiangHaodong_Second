@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/mainPage.css">
+    <link rel="stylesheet" href="css/loginPage.css">
+    <link rel="stylesheet" href="css/publishPage.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/searchPage.css">
+    <link rel="stylesheet" href="css/detailPage.css">
+    <link rel="stylesheet" href="css/personal.css">
+    <link rel="stylesheet" href="css/myMessage.css">
+    <link rel="stylesheet" href="css/userlistPage.css">
+    <link rel="stylesheet" href="css/editPage.css">
+    <link rel="stylesheet" href="css/userHomePage.css">
+    <link rel="stylesheet" href="css/chatPage.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <!--引入字体图标 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/redbook.js"></script>
+</head>
+
+<body>
+    <!-- 登录模块 -->
+    <section class="login">
+        <!-- logo部分 -->
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+            <h5>标记我的生活</h5>
+        </div>
+
+        <!-- input -->
+        <div class="input">
+            <form id='form' name="form">
+                <input type="text" name="username" class="un" autocomplete="off" placeholder="请输入用户名">
+                <input type="password" name="password" class="pwd" placeholder="请输入密码">
+            </form>
+            <p class="input_info"></p>
+            <input type="button" value="登录" class="btn">
+        </div>
+    </section>
+
+    <!-- 主页面 -->
+    <article class="subject">
+        <!-- 首页 -->
+        <section class="home show">
+            <!-- 首页头部 -->
+            <header>
+                <div class="shortcut">
+                    <a href="#" class="release iconfont icon-tianjia"></a>
+                    <h2>首页</h2>
+                    <a href="#" class="home-search-btn iconfont icon-sousuo"></a>
+                </div>
+
+                <div class="tab-nav">
+                    <ul>
+                        <li class="tab-nav-selected">推荐</li>
+                        <li>旅行</li>
+                        <li>美食</li>
+                        <li>时尚</li>
+                        <li>彩妆</li>
+                        <li>高效</li>
+                        <li>护肤</li>
+                    </ul>
+                </div>
+            </header>
+            <!-- 首页主体 -->
+
+            <div class="main" id="push"></div>
+
+            <div class="main" id="travel"></div>
+
+            <div class="main" id="food"></div>
+
+            <div class="main" id="fashion"></div>
+
+            <div class="main" id="cosmetics"></div>
+
+            <div class="main" id="efficient"></div>
+
+            <div class="main" id="skin"></div>
+
+        </section>
+
+        <!-- 我的消息页面 -->
+        <section class="myMessage">
+            <!-- 置顶栏 -->
+            <div class="myMessage-shortcut">
+                <h4>消息</h4>
+                <button class="new-chat">创建聊天</button>
+            </div>
+
+            <!-- 我的消息功能区 -->
+            <div class="myMessage-function">
+                <!-- 赞和收藏 -->
+                <div class="msg-likeAndStar">
+                    <span class="msg-like-icon iconfont">&#xe8c4;</span>
+                    <i>赞和收藏</i>
+                </div>
+                <!-- 新增关注 -->
+                <div class="msg-follow">
+                    <span class="msg-follow-icon iconfont">&#xe61e;</span>
+                    <i>新增关注</i>
+                </div>
+                <!-- 评论和@ -->
+                <div class="msg-review">
+                    <span class="msg-review-icon iconfont">&#xe620;</span>
+                    <i>评论和@</i>
+                </div>
+            </div>
+
+            <!-- 聊天列表 -->
+            <div class="chat-list" id="result-user"></div>
+        </section>
+
+        <!-- 个人中心 -->
+        <section class="personal">
+            <!-- 置顶栏 -->
+            <div class="personal-shortcut">
+                <span class="out-login icon-tuichudenglu iconfont"></span>
+                <span class="share icon-fenxiang iconfont"></span>
+            </div>
+            <!-- 用户信息 -->
+            <div class="person-info">
+                <img src="" alt="">
+                <h4></h4>
+            </div>
+
+            <!-- 个人中心功能区 -->
+            <div class="person-function">
+                <div class="relation">
+                    <ul>
+                        <li class="person-follow red-color">
+                            <i></i>
+                            <p>关注</p>
+                        </li>
+                        <li class="person-fan">
+                            <i></i>
+                            <p>粉丝</p>
+                        </li>
+                        <li class="person-likeAndStar">
+                            <i></i>
+                            <p>点赞与收藏</p>
+                        </li>
+                    </ul>
+                </div>
+                <button class="person-data">编辑资料</button>
+            </div>
+
+            <!-- 文章展示区 -->
+            <div class="person-show">
+                <!-- 切换按钮 -->
+                <ul class="page-tab">
+                    <li id="note-page" class="tab-nav-selected">笔记</li>
+                    <li id="collect-page">收藏</li>
+                    <li id="like-page">赞过</li>
+                </ul>
+
+                <!-- 展示区 -->
+                <div class="note-page show" id="note-page"></div>
+                <div class="collect-page" id="collect-page"></div>
+                <div class="like-page" id="like-page"></div>
+            </div>
+        </section>
+
+        <!-- 底部导航栏 -->
+        <div class="tab">
+            <ul>
+                <li class="tab-selected" id="home">
+                    <span class="icon iconfont icon-tubiao_shouye-"></span>
+                    <p>首页</p>
+                </li>
+                <li id="myMessage">
+                    <span class="icon iconfont icon-shouye"></span>
+                    <p>我的消息</p>
+                </li>
+                <li id="personal">
+                    <span class="icon iconfont icon-gerenzhongxin"></span>
+                    <p>个人中心</p>
+                </li>
+            </ul>
+        </div>
+
+    </article>
+
+    <!-- 发布文章页面 -->
+    <article class="publish">
+        <!-- 返回按钮 -->
+        <div class="publish-back"></div>
+
+        <!-- 写入区 -->
+        <div class="write">
+            <!-- 上传图片 -->
+            <div class="publish-img-area">
+                <button class="upload-img icon-daohang-fabuwenzhang iconfont"></button>
+                <input type="file" id="upload" name="image" class="hide">
+            </div>
+            <input type="text" placeholder="在此处填写标题~" class="page-title">
+            <textarea class="page-content" placeholder="在此处添加正文~"></textarea>
+
+            <!-- 话题 -->
+            <div class="addition">
+                <button class="theme"><i>#</i> 话题</button><button class=" at"><i>@</i> 用户</button>
+                <div class="theme-area"></div>
+            </div>
+
+            <!-- 发布按钮 -->
+            <button class="publish-btn">发布笔记</button>
+        </div>
+
+        <!-- 提交 -->
+        <button class="publish-article"></button>
+
+        <!-- 写话题的区域 -->
+        <div class="write-theme-box">
+            <!-- 遮罩层 -->
+            <div class="publish-mask"></div>
+            <!-- 添加tag -->
+            <div class="input-theme-area">
+                <input type="text" id="themeName" placeholder="在此处添加Tag~">
+                <div class="theme-btn">
+                    <button id="cancel">取消</button><button id="confirm">确认</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 点击发布后的提示信息 -->
+        <div class="publish-info"></div>
+    </article>
+
+    <!-- 搜索页面 -->
+    <article class="search">
+        <div class="search-shortcut">
+            <div class="search-back goBack-btn"></div>
+            <div class="searchBox iconfont icon-sousuo">
+                <input type="text" class="search-input iconfont" placeholder="请输入搜索内容">
+            </div>
+            <button class="search-btn">搜索</button>
+        </div>
+
+        <div class="search-nav">
+            <ul>
+                <li class="tab-nav-selected">文章</li>
+                <li>用户</li>
+            </ul>
+        </div>
+
+        <div class="search-result">
+            <div class="search-result-content show" id="result-page"></div>
+            <div class="search-result-content result-user" id="result-user">
+
+            </div>
+        </div>
+    </article>
+
+    <!-- 文章详情页 -->
+    <article class="detailsPage">
+        <!-- 置顶栏 -->
+        <div class="details-shortcut">
+            <!-- 左侧 -->
+            <div class="left">
+                <!-- 返回按钮 -->
+                <div class="details-back goBack-btn"></div>
+                <div class="details-user-info">
+                    <img src="" alt="">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 右侧 -->
+            <div class="right">
+                <button class="follow"></button>
+                <span class="transmit icon-fenxiang iconfont"></span>
+            </div>
+        </div>
+        <!-- 文章内容部分 -->
+        <div class="article-content">
+            <!-- 轮播图 -->
+            <div class="slide-show">
+                <ul class="clearfix">
+                </ul>
+                <!-- 轮播图按钮 -->
+                <ol class="slide-show-btn-box">
+                </ol>
+
+            </div>
+            <!-- 文字部分 -->
+            <div class="article-word">
+                <!-- 文章标题 -->
+                <h2 class="article-title"></h2>
+                <!-- 文章正文 -->
+                <p class="article-body">
+                </p>
+                <!-- 文章标签 -->
+                <div class="article-tags">
+                </div>
+                <div class="article-bottom">
+                    <!-- 日期 -->
+                    <span class="date"></span>
+                    <button class="article-bottom-like iconfont icon-buxihuan"> 不喜欢</button>
+                </div>
+            </div>
+        </div>
+        <!-- 评论区 -->
+        <div class="review" id="review">
+            <!-- 评论的数量 -->
+            <div class="review-num">共 <i></i> 条评论</div>
+            <!-- 评论输入框 -->
+            <div class="review-bar">
+                <img src="" alt="">
+                <input type="text" class="review-input" placeholder="喜欢就给个评论支持一下">
+            </div>
+            <!-- 显示评论的区域 -->
+            <div class="review-content"></div>
+        </div>
+        <!-- 贴底栏 -->
+        <div class="bottom-bar">
+            <input type="text" class="bottom-review-bar iconfont" placeholder="&#xe600; 说点什么...">
+            <div class="bottom-bar-icon">
+                <span class="like"><i class=" icon-xihuan-xianxing iconfont"></i> <span></span></span>
+                <span class="collect"><i class=" icon-shoucang iconfont"></i> <span></span></span>
+                <a href="#review" class="bottom-bar-review"><i class="icon-pinglun iconfont"> </i> <span></span></a>
+            </div>
+        </div>
+        <!-- 发表评论区 -->
+        <div class="write-review">
+            <div class="write-review-input">
+                <input type="text" placeholder="快说点什么~">
+                <span class="icon-aite iconfont"></span>
+                <span class="icon-biaoqing iconfont"></span>
+            </div>
+
+            <button class="send-review-btn">发送</button>
+        </div>
+        <!-- 遮罩层 -->
+        <div class="review-mask"></div>
+    </article>
+
+    <!-- 用户列表页面 -->
+    <article class="userlist-Page">
+        <div class="userlist-shortcut">
+            <h2></h2>
+            <div class="userlist-back goBack-btn"></div>
+            <ul class="userlist-tab">
+            </ul>
+        </div>
+
+        <div class="userlist" id="result-user">
+    </article>
+
+    <!-- 编辑资料页面 -->
+    <article class="user-edit">
+        <!-- 置顶栏 -->
+        <div class="userlist-shortcut">
+            <h2>编辑资料</h2>
+            <!-- 返回按钮 -->
+            <div class="edit-back goBack-btn"></div>
+            <!-- 修改头像 -->
+            <div class="edit-user-avatar">
+                <img src="" alt="">
+                <input type="file" class="avatar-pic">
+            </div>
+        </div>
+
+        <!-- 填写资料区域 -->
+        <div class="edit-area">
+            <div class="user-name edit-bar" id="nickname">
+                <span class="hint">名字</span>
+                <span class="name-content content"></span>
+            </div>
+            <div class="user-sex edit-bar" id="gender">
+                <span class="hint">性别</span>
+                <span class="sex-content content">男/女</span>
+            </div>
+            <div class="user-birthday edit-bar" id="birthday">
+                <span class="hint">生日</span>
+                <span class="birthday-content content">xxxx-xx-xx</span>
+            </div>
+            <div class="user-area edit-bar" id="area">
+                <span class="hint">地区</span>
+                <span class="area-content content">省份 城市</span>
+            </div>
+            <div class="user-description edit-bar" id="description">
+                <span class="hint">简介</span>
+                <span class="description-content content"></span>
+            </div>
+            <div class="user-backGroundPicture edit-bar">
+                <span class="hint">背景图</span>
+                <span class="backGroundPicture-content content">
+                    <img src="" alt="">
+                    <input type="file" class="upload-background-img">
+                </span>
+            </div>
+        </div>
+
+        <!-- 输入信息区域 -->
+        <div class="edit-box">
+            <input type="text" class="edit-input" placeholder="请输入">
+            <div class="edit-box-btn">
+                <button class="cancel">取消</button>
+                <button class="confirm">确定</button>
+            </div>
+        </div>
+
+        <!-- 遮罩层 -->
+        <div class="edit-mask"></div>
+
+        <!-- 错误提示 -->
+        <div class="edit-error">输入格式错误</div>
+    </article>
+
+    <!-- 用户主页 -->
+    <article class="user-home">
+        <!-- 置顶栏 -->
+        <div class="user-shortcut">
+            <span class="user-back goBack-btn"></span>
+        </div>
+        <!-- 用户信息 -->
+        <div class="user-home-info">
+            <img src="" alt="">
+            <h4></h4>
+        </div>
+
+        <!-- 用户主页功能区 -->
+        <div class="user-function">
+            <div class="relation">
+                <ul>
+                    <li class="user-follow red-color">
+                        <i></i>
+                        <p>关注</p>
+                    </li>
+                    <li class="user-fan">
+                        <i></i>
+                        <p>粉丝</p>
+                    </li>
+                    <li class="user-likeAndStar">
+                        <i></i>
+                        <p>点赞与收藏</p>
+                    </li>
+                </ul>
+            </div>
+            <button class="user-chat">发消息</button>
+        </div>
+
+        <!-- 文章展示区 -->
+        <div class="user-show">
+            <!-- 切换按钮 -->
+            <ul class="page-tab">
+                <li id="note-page" class="tab-nav-selected">笔记</li>
+                <li id="collect-page">收藏</li>
+                <li id="like-page">赞过</li>
+            </ul>
+
+            <!-- 展示区域 -->
+            <div class="note-page show" id="note-page"></div>
+            <div class="collect-page" id="collect-page"></div>
+            <div class="like-page" id="like-page"></div>
+        </div>
+
+    </article>
+
+    <!-- 发私信页面 -->
+    <article class="chat-page">
+        <!-- 置顶栏 -->
+        <div class="chat-shortcut">
+            <div class="chat-page-back goBack-btn"></div>
+            <h3 class="chat-user-name">dadong</h3>
+        </div>
+
+        <!-- 信息展示区 -->
+        <div class="msg-area">
+
+        </div>
+
+        <!-- 发送消息 -->
+        <div class="message-input">
+            <input type="text" class="message-content" placeholder="请输入内容">
+            <button class="send-message">发送</button>
+        </div>
+    </article>
+
+    <!-- loading页面 -->
+    <article class="loading">
+    </article>
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+// 文章详情页面
+.detailsPage {
+    display: none;
+    overflow: hidden;
+}
+
+// 置顶栏
+.details-shortcut {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 50px;
+    background-color: #fff;
+
+    // 返回按钮
+    .details-back {
+        padding-top: 15px;
+    }
+
+    // 置顶栏左边部分
+    .left {
+        display: flex;
+    }
+
+    .details-user-info {
+        margin-left: 15px;
+        padding-top: 5px;
+
+        // 头像
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: gray;
+        }
+
+        // 昵称
+        span {
+            font-size: 16px;
+        }
+    }
+
+    // 置顶栏右边部分
+    .right {
+        display: flex;
+    }
+
+    // 关注按钮
+    .follow {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+
+}
+
+// 文章部分
+.article-content {
+    position: relative;
+
+    // 轮播图按钮
+    ol {
+        display: flex;
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        li {
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: gray;
+            margin: 0 5px;
+            transition: all .5s;
+        }
+
+        // 按钮选中样式
+        .slide-show-selected {
+            width: 15px;
+            background-color: rgb(255, 68, 68);
+        }
+    }
+
+    // 文章文字部分
+    .article-word {
+        padding: 25px 15px 0;
+    }
+
+    // 文章标题
+    .article-title {
+        font-size: 25px;
+        color: #333;
+    }
+
+    // 正文
+    .article-body {
+        margin-top: 12px;
+        font-size: 16px;
+    }
+
+    // 话题
+    .article-tags {
+        margin-top: 10px;
+        font-size: 14px;
+        color: rgb(255, 68, 68)
+    }
+
+    // 底部通栏
+    .article-bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        color: #bbb;
+
+        // 喜欢按钮
+        .article-bottom-like {
+            width: 85px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            color: #666;
+        }
+    }
+
+}
+
+// 轮播图
+.slide-show {
+    position: relative;
+    width: 390px;
+
+    .ul-margin {
+        margin-left: -100%;
+    }
+
+    .ul-width {
+        width: 100% !important;
+    }
+
+    ul {
+
+        // 图片盒子
+        li {
+            float: left;
+        }
+    }
+
+    // 过渡效果
+    .ul-transition {
+        transition: all .5s;
+    }
+
+    // 图片
+    img {
+        width: 390px;
+        height: 430px;
+    }
+
+}
+
+// 评论部分
+.review {
+    padding: 0 15px;
+
+    // 数量
+    .review-num {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .review-bar {
+        display: flex;
+        margin-top: 8px;
+
+        // 头像
+        img {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        // 输入框
+        .review-input {
+            padding-left: 15px;
+            width: 100%;
+            height: 30px;
+            background-color: #eee;
+            border-radius: 15px;
+        }
+
+        .review-input::placeholder {
+            color: #bbb;
+        }
+    }
+
+    // 单条评论盒子
+    .review-item {
+        display: flex;
+        margin-top: 25px;
+
+        // 文字部分
+        .review-word {
+            position: relative;
+            width: 100%;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+
+            // 内容
+            p {
+                width: 280px;
+            }
+
+            // 喜欢按钮
+            .like {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                .like-icon {
+                    font-size: 25px;
+                }
+            }
+
+            // 二级评论
+            .second-review {
+                display: flex;
+                margin-top: 10px;
+
+                // 头像
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                // 文字部分
+                .review-word {
+                    border: 0;
+                    padding-bottom: 0;
+
+                }
+
+                // 时间
+                .review-date {
+                    font-weight: 400;
+                }
+            }
+        }
+
+        // 一级评论头像
+        img {
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        // 内容
+        .review-content {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // 昵称和时间样式
+        .userName,
+        .review-date {
+            font-size: 14px;
+            color: #bbb;
+        }
+
+    }
+
+    // 评论到底提示盒子
+    .review-endInfo {
+        margin-top: 10px;
+        margin-bottom: 55px;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+// 底部通栏
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    padding: 0 15px;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+
+    // 评论输入框
+    .bottom-review-bar {
+        margin-top: 5px;
+        padding-left: 15px;
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #eee;
+        font-size: 16px;
+
+        &::placeholder {
+            color: #bbb;
+        }
+    }
+
+    // 图标
+    .bottom-bar-icon {
+        display: flex;
+    }
+
+    span,
+    a {
+        display: flex;
+        padding: 0 5px;
+        line-height: 50px;
+
+        span {
+            font-size: 16px;
+        }
+
+        i::before {
+            font-size: 28px;
+        }
+    }
+}
+
+// 真正输入评论的盒子
+.write-review {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    padding: 5px 15px;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    z-index: 1;
+
+    // 输入部分
+    .write-review-input {
+        display: flex;
+        height: 40px;
+        width: 100%;
+        background-color: #eee;
+        border-radius: 20px;
+
+        // 输入框
+        input {
+            padding-left: 15px;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background-color: #eee;
+
+            &::placeholder {
+                color: #bbb;
+            }
+        }
+
+        // 图标
+        span {
+            width: 30px;
+            line-height: 40px;
+            font-size: 18px;
+        }
+    }
+
+    // 发送按钮
+    .send-review-btn {
+        margin-left: 10px;
+        width: 0px;
+        height: 40px;
+        background-color: rgb(62, 182, 222);
+        border-radius: 20px;
+        color: #fff;
+        transition: all .3s;
+    }
+
+    // 按钮显示
+    .send-review-btn-show {
+        width: 60px;
+    }
+}
+
+// 遮罩层
+.review-mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+}

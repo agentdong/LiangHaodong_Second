@@ -1,0 +1,95 @@
+// 登陆页面样式
+.login {
+    position: relative;
+    display: none;
+
+    // logo样式
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 200px;
+
+        // logo图片样式 
+        img {
+            width: 190px;
+            background-color: transparent;
+        }
+
+        // logo下方的文字样式
+        h5 {
+            position: absolute;
+            bottom: 5px;
+            width: 200px;
+            padding-left: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            letter-spacing: 17px;
+        }
+    }
+
+    // 输入区域的样式
+    .input {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 520px;
+        text-align: center;
+
+        // 登陆失败时表单的样式
+        .input_error {
+            box-shadow: 0 0 5px rgb(255, 130, 130);
+            border: 1px solid rgb(255, 125, 125);
+        }
+    }
+
+    // 用户名输入框的样式
+    .un {
+        margin-bottom: 20px;
+    }
+
+    // 用户名输入框和密码框的样式
+    .un,
+    .pwd {
+        padding: 0 25px;
+        width: 312px;
+        height: 50px;
+        border: 1px solid #ccc;
+        font-size: 18px;
+        text-align: center;
+        caret-color: red;
+        border-radius: 25px;
+    }
+
+    // 用户名输入框和密码框的提示信息
+    .un::placeholder,
+    .pwd::placeholder {
+        color: #ddd;
+    }
+
+    // 用户名输入框和密码框获得焦点时的样式
+    .un:focus,
+    .pwd:focus {
+        border: 1px solid rgb(70, 70, 70);
+        box-shadow: 0 0 5px rgb(55, 55, 55);
+    }
+
+    // 登录按钮的样式
+    .btn {
+        margin-top: 20px;
+        width: 125px;
+        height: 50px;
+        background-color: rgb(255, 50, 50);
+        border-radius: 25px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    // 登录提示信息的样式
+    .input_info {
+        font-size: 16px;
+        color: red;
+    }
+}

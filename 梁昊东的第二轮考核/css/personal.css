@@ -1,0 +1,76 @@
+.personal {
+  display: none;
+  height: 100vh;
+  background-position: top center;
+}
+.personal-shortcut {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.personal-shortcut .out-login {
+  font-size: 25px;
+  line-height: 50px;
+}
+.person-info {
+  display: flex;
+  padding: 0 15px;
+}
+.person-info img {
+  margin-right: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.person-info h4 {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 100px;
+}
+.person-function {
+  display: flex;
+  padding: 30px 0 0;
+}
+.person-function ul {
+  display: flex;
+}
+.person-function ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+  color: #ccc;
+}
+.person-function ul li i {
+  font-size: 20px;
+}
+.person-function ul li p {
+  font-size: 16px;
+}
+.person-function ul .red-color {
+  color: #ff4444;
+}
+.person-function .person-data {
+  margin-top: 12px;
+  margin-left: 30px;
+  padding: 0 10px;
+  height: 30px;
+  border: 1px solid #888;
+  border-radius: 5px;
+}
+.person-show {
+  margin-top: 20px;
+}
+.person-show .page-tab {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+}
+.person-show .note-page,
+.person-show .collect-page,
+.person-show .like-page {
+  display: none;
+  position: relative;
+}
